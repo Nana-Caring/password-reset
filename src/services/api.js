@@ -27,15 +27,6 @@ export const authAPI = {
       newPassword
     });
     return response.data;
-  },
-
-  // Verify reset token (optional - for validation)
-  verifyResetToken: async (email, token) => {
-    const response = await api.post('/api/auth/verify-reset-token', {
-      email,
-      token
-    });
-    return response.data;
   }
 };
 

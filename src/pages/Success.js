@@ -7,7 +7,7 @@ const Success = () => {
       <div className="auth-card">
         <div className="auth-header">
           <img 
-            src="https://nanacaring-backend.onrender.com/assets/logo.jpg" 
+            src={require('../utils/newlogo.jpg')} 
             alt="NANA Logo" 
             className="logo"
           />
