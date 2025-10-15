@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { authAPI } from '../services/api';
 import Button from '../components/Button';
@@ -15,9 +15,34 @@ const ResetPassword = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [tokenValid, setTokenValid] = useState(null);
   
   const email = searchParams.get('email');
   const token = searchParams.get('token');
+
+  useEffect(() => {
+    if (!email || !token) {
+      setError('Invalid reset link. Please request a new password reset.');
+      return;
+    }
+
+    // Verify token on component mount
+    verifyToken();
+  }, [email, token]);
+
+  const verifyToken = async () => {
+    try {
+      const response = await authAPI.verifyResetToken(email, token);
+      setTokenValid(response.success);
+      if (!response.success) {
+        setError('This reset link has expired or is invalid. Please request a new password reset.');
+      }
+    } catch (error) {
+      console.error('Token verification error:', error);
+      setError('Unable to verify reset link. Please try again.');
+      setTokenValid(false);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -62,12 +87,48 @@ const ResetPassword = () => {
     }
   };
 
+  if (tokenValid === false) {
+    return (
+      <div className="auth-container">
+        <div className="auth-card">
+          <div className="auth-header">
+            <img 
+              src="https://nanacaring-backend.onrender.com/assets/logo.jpg" 
+              alt="NANA Logo" 
+              className="logo"
+            />
+            <h2>Invalid Reset Link</h2>
+            <p>This password reset link has expired or is invalid.</p>
+          </div>
+          <div className="auth-footer">
+            <Button 
+              onClick={() => navigate('/forgot-password')}
+              className="auth-button"
+            >
+              Request New Reset Link
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (tokenValid === null) {
+    return (
+      <div className="auth-container">
+        <div className="auth-card">
+          <div className="loading">Verifying reset link...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
           <img 
-            src={require('../utils/logo.png')} 
+            src="https://nanacaring-backend.onrender.com/assets/logo.jpg" 
             alt="NANA Logo" 
             className="logo"
           />
@@ -117,7 +178,7 @@ const ResetPassword = () => {
         </form>
 
         <div className="auth-footer">
-          <p className="help-text">After resetting, you can log in to your NANA account with your new password.</p>
+          <p>Remember your password? <a href="/login">Back to Login</a></p>
         </div>
       </div>
     </div>

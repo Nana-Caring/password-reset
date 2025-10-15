@@ -19,12 +19,36 @@ api.interceptors.request.use((config) => {
 });
 
 export const authAPI = {
+  // Forgot password - no auth required
+  forgotPassword: async (email) => {
+    const response = await api.post('/api/auth/forgot-password', { email });
+    return response.data;
+  },
+
   // Reset password with token - no auth required
   resetPassword: async (email, token, newPassword) => {
     const response = await api.post('/api/auth/reset-password', {
       email,
       token,
       newPassword
+    });
+    return response.data;
+  },
+
+  // Change password for logged-in user - auth required
+  changePassword: async (currentPassword, newPassword) => {
+    const response = await api.post('/api/auth/change-password', {
+      currentPassword,
+      newPassword
+    });
+    return response.data;
+  },
+
+  // Verify reset token
+  verifyResetToken: async (email, token) => {
+    const response = await api.post('/api/auth/verify-reset-token', {
+      email,
+      token
     });
     return response.data;
   }
