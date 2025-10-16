@@ -1,0 +1,12 @@
+# Render.com deployment configuration
+# This ensures client-side routing works properly
+
+# Build command (in Render dashboard, set this as build command):
+# npm run build
+
+# Start command (in Render dashboard, set this as start command):
+# serve -s build -p $PORT
+
+# Environment Variables needed:
+# NODE_ENV=production
+# REACT_APP_API_URL=https://nanacaring-backend.onrender.com
