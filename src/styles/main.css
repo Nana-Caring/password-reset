@@ -488,14 +488,3 @@ button:hover {
   background: none;
   transform: translateY(-50%) scale(1);
 }
-
-.password-toggle svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2;
-  transition: all 0.3s ease;
-}
-
-.password-toggle:hover svg {
-  stroke: #FFA500EE;
-}
