@@ -107,7 +107,21 @@ const ResetPassword = () => {
                 onClick={() => setShowNewPassword(!showNewPassword)}
                 disabled={loading}
               >
-                {showNewPassword ? '🙈' : '👁️'}
+                {showNewPassword ? (
+                  // Professional Eye Slash Icon (Password Hidden)
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M3 3l18 18" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M10.584 10.587a2 2 0 002.828 2.83" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9.363 5.365A9.466 9.466 0 0112 5c4.97 0 8.5 6 8.5 6a15.69 15.69 0 01-2.228 2.909" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6.192 6.192A15.686 15.686 0 003.5 11S7.03 17 12 17a9.466 9.466 0 003.654-.728" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ) : (
+                  // Professional Eye Icon (Password Visible)
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M12 5C7.03 5 3.5 11 3.5 11s3.53 6 8.5 6 8.5-6 8.5-6-3.53-6-8.5-6z" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="11" r="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
               </button>
             </div>
             <PasswordStrengthIndicator password={formData.newPassword} />
@@ -133,7 +147,21 @@ const ResetPassword = () => {
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 disabled={loading}
               >
-                {showConfirmPassword ? '🙈' : '👁️'}
+                {showConfirmPassword ? (
+                  // Professional Eye Slash Icon (Password Hidden)
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M3 3l18 18" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M10.584 10.587a2 2 0 002.828 2.83" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9.363 5.365A9.466 9.466 0 0112 5c4.97 0 8.5 6 8.5 6a15.69 15.69 0 01-2.228 2.909" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6.192 6.192A15.686 15.686 0 003.5 11S7.03 17 12 17a9.466 9.466 0 003.654-.728" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ) : (
+                  // Professional Eye Icon (Password Visible)
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M12 5C7.03 5 3.5 11 3.5 11s3.53 6 8.5 6 8.5-6 8.5-6-3.53-6-8.5-6z" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="11" r="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
               </button>
             </div>
             {formData.confirmPassword && formData.newPassword && (

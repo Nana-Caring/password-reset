@@ -488,3 +488,24 @@ button:hover {
   background: none;
   transform: translateY(-50%) scale(1);
 }
+
+/* Professional SVG Icon Styling */
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  transition: all 0.3s ease;
+}
+
+.password-toggle:hover svg {
+  stroke: #FFA500EE;
+}
+
+.password-toggle:active svg {
+  stroke: #008000;
+  transform: scale(0.95);
+}
+
+.password-toggle:disabled svg {
+  stroke: #d1d5db;
+}
