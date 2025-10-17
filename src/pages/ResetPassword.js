@@ -106,20 +106,19 @@ const ResetPassword = () => {
                 className="password-toggle"
                 onClick={() => setShowNewPassword(!showNewPassword)}
                 disabled={loading}
+                title={showNewPassword ? "Hide password" : "Show password"}
               >
                 {showNewPassword ? (
-                  // Professional Eye Slash Icon (Password Hidden)
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M3 3l18 18" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M10.584 10.587a2 2 0 002.828 2.83" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M9.363 5.365A9.466 9.466 0 0112 5c4.97 0 8.5 6 8.5 6a15.69 15.69 0 01-2.228 2.909" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M6.192 6.192A15.686 15.686 0 003.5 11S7.03 17 12 17a9.466 9.466 0 003.654-.728" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                    <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                    <line x1="2" y1="2" x2="22" y2="22"/>
                   </svg>
                 ) : (
-                  // Professional Eye Icon (Password Visible)
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M12 5C7.03 5 3.5 11 3.5 11s3.53 6 8.5 6 8.5-6 8.5-6-3.53-6-8.5-6z" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="11" r="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
                   </svg>
                 )}
               </button>
@@ -146,20 +145,19 @@ const ResetPassword = () => {
                 className="password-toggle"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 disabled={loading}
+                title={showConfirmPassword ? "Hide password" : "Show password"}
               >
                 {showConfirmPassword ? (
-                  // Professional Eye Slash Icon (Password Hidden)
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M3 3l18 18" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M10.584 10.587a2 2 0 002.828 2.83" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M9.363 5.365A9.466 9.466 0 0112 5c4.97 0 8.5 6 8.5 6a15.69 15.69 0 01-2.228 2.909" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M6.192 6.192A15.686 15.686 0 003.5 11S7.03 17 12 17a9.466 9.466 0 003.654-.728" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                    <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                    <line x1="2" y1="2" x2="22" y2="22"/>
                   </svg>
                 ) : (
-                  // Professional Eye Icon (Password Visible)
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M12 5C7.03 5 3.5 11 3.5 11s3.53 6 8.5 6 8.5-6 8.5-6-3.53-6-8.5-6z" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="11" r="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
                   </svg>
                 )}
               </button>
